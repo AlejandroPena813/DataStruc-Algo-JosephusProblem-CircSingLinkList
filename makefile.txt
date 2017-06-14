@@ -1,0 +1,14 @@
+all:CSLL
+
+CSLL: josephus.o CSLL.o
+	g++ -o CSLL josephus.o CSLL.o
+
+josephus.o: josephus.cpp CSLL.h
+	g++ -c -Wall -g josephus.cpp
+
+CSLL.o: CSLL.cpp CSLL.h
+	g++ -c -Wall -g CSLL.cpp
+
+clean:
+	rm -rf *.o
+	rm -rf CSLL
